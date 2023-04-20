@@ -29,8 +29,7 @@
       "configurations": {
         "development": {
           "buildTarget": "terminal:build:development",
-          "hmr": true,
-          "open": true
+          "hmr": true
         },
         "production": {
           "buildTarget": "terminal:build:production",

@@ -4,6 +4,12 @@
   "sourceRoot": "libs/services/src",
   "projectType": "library",
   "targets": {
+    "generate-protos": {
+      "command": "nx run services:clean-protos && cd libs/services/scripts/ && generate-protos-ts.bat"
+    },
+    "clean-protos": {
+      "command": "rimraf libs/services/src/protos-ts && mkdirp libs/services/src/protos-ts"
+    },
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
