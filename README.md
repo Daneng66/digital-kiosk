@@ -15,3 +15,19 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+## Prerequisites
+
+Run `npm ci` to install all dependencies.
+
+Get [protoc](https://github.com/protocolbuffers/protobuf/releases) and add it to your PATH environment variable.
+
+## Usage
+
+Run `npm run dev` to start the web-ui client.
+
+Run the following in PowerShell, from the `/digital-kiosk` directory, to generate a `.ts` file, for each `*.proto` file, in the `/protos/` directory, and output the `.ts` file to `/lib/protos` directory:
+
+```
+protoc --plugin=protoc-gen-ts_proto=.\node_modules\.bin\protoc-gen-ts_proto.cmd --ts_proto_out=./libs/protos --ts_proto_opt="outputServices=nice-grpc,outputServices=generic-definitions,useExactTypes=false" --proto_path=./libs/protos ./libs/protos/*.proto
+```
