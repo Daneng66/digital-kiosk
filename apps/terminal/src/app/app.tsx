@@ -1,14 +1,33 @@
-import { Product, listProducts } from '@digital-kiosk/services';
+import {
+  Product,
+  initialiseServices,
+  productService,
+} from '@digital-kiosk/services';
 import { useEffect, useState } from 'react';
+
+initialiseServices({
+  gateway: import.meta.env.VITE_GRPC_GATEWAY,
+  mock: import.meta.env.VITE_GRPC_MOCKED,
+  token: '',
+});
 
 export function App() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    (async () => {
-      const res = await listProducts();
-      setProducts(res);
-    })();
+    const controller = new AbortController();
+
+    productService()
+      .listProducts({}, { signal: controller.signal })
+      .then((res) => setProducts(res.products))
+      .catch((e) => {
+        if (controller.signal.aborted) {
+          return;
+        }
+        console.error(e);
+      });
+
+    return () => controller.abort();
   }, []);
 
   return (

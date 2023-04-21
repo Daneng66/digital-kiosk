@@ -27,6 +27,10 @@
         "buildTarget": "terminal:build"
       },
       "configurations": {
+        "mock": {
+          "buildTarget": "terminal:build:development",
+          "hmr": true
+        },
         "development": {
           "buildTarget": "terminal:build:development",
           "hmr": true
