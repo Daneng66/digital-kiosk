@@ -32,6 +32,7 @@ export function App() {
 
   return (
     <div>
+      {JSON.stringify(import.meta.env)}
       {products.map((p, i) => (
         <p key={i}>{p.name}</p>
       ))}

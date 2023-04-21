@@ -11,7 +11,7 @@ import { mockMiddleware } from './mocks/mockMiddleware';
 type InitOptions = {
   gateway: string;
   token: string;
-  mock?: string;
+  mock?: 'true' | 'false';
 };
 
 export let clientFactory: ClientFactory;
