@@ -3,6 +3,7 @@ import {
   initialiseServices,
   productService,
 } from '@digital-kiosk/services';
+import { Ui } from '@digital-kiosk/ui';
 import { useEffect, useState } from 'react';
 
 initialiseServices({
@@ -32,7 +33,7 @@ export function App() {
 
   return (
     <div>
-      {JSON.stringify(import.meta.env)}
+      <Ui />
       {products.map((p, i) => (
         <p key={i}>{p.name}</p>
       ))}

@@ -5,6 +5,7 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
     "@nrwl/eslint-plugin-nx": "15.9.2",
     "@nrwl/jest": "^15.9.2",
     "@nrwl/js": "15.9.2",
@@ -24,6 +25,7 @@
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "~0.25.8",
     "@vitest/ui": "^0.25.8",
+    "babel-jest": "^29.4.1",
     "electron": "^22.1.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",

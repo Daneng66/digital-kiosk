@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@digital-kiosk/services": ["libs/services/src/index.ts"]
+      "@digital-kiosk/services": ["libs/services/src/index.ts"],
+      "@digital-kiosk/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
